@@ -7,7 +7,8 @@
     "test": "jest --detectOpenHandles --colors",
     "lint": "eslint src/*/*/*/** tests/** --fix --cache",
     "build": "rimraf ./build && tsc",
-    "start": "ts-node-dev --inspect --respawn --transpile-only src/interfaces/http/index.ts",
+    "dev": "ts-node-dev --inspect --respawn --transpile-only src/interfaces/http/index.ts",
+    "start": "node -r dotenv/config build/index.js",
     "build-and-start": "yarn build && node ./build/interfaces/http/index.js"
   },
   "author": "",
