@@ -23,8 +23,8 @@ app.post('/', async (req, res) => {
   res.status(code).json({ status, message });
 });
 
-const PORT = process.env.PORT || 4000;
+app.set('port', (process.env.PORT || 4000));
 
-app.listen(PORT, () => {
-  log('info', `Server is running on PORT: ${PORT}`);
+app.listen(app.get('port'), () => {
+  log('info', `Server is running on PORT: ${app.get('port')}`);
 });
